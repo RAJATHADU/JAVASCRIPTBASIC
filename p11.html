@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS-Basics</title>
+    </head>
+    <body>
+        <center>
+            <h1>Functions</h1>
+        </center>
+        <pre>
+            1.Default Function(No Parameter,No Return)
+            2.Without Parameter,with Return Value
+            3.With Parameter,Without Return Value
+            4.With Parameter,With Return Value
+        </pre>
+        <hr>
+        <h1 onclick="defaultFunction()">Default Function(No Parameter,No Return)</h1>
+        <script>
+            function defaultFunction() //Function Declaration
+            {
+                document.write("This is Default Function");
+            }
+            //defaultFunction(); //Function Calling
+        </script>
+        <hr>
+
+        <h1>Without Parameter,With Return Value</h1>
+        <script>
+            function addFunction(){
+                let firstNumber=10,secondNumber=20,sum;
+
+                sum=firstNumber+secondNumber;
+                return sum;
+                //return firstNumber; one function returns only one return value
+
+                document.write(sum);
+            }
+            document.write(`<strong>Without Parameter,With Return Value:${addFunction()}</strong>`)
+        </script>
+        <hr>
+
+        <h1>With Parameter,Without Return Value</h1>
+        <script>
+            function studDetails(firstName,lastName){
+            document.write(`<p>First Parameter Value is:${firstName}</p>`);
+            document.write(`<p>Last Parameter Value is:${lastName}</p>`);
+
+            let fn,ln,fullName;
+            fn=firstName;
+            ln=lastName;
+
+            document.write(`<p>First Variable Value is:${fn}</p>`);
+            document.write(`<p>Last Variable Value is:${ln}</p>`);
+
+            //fullName=firstName+lastName;
+            fullName=fn+" "+ln;
+            document.write(`<p>Full Name Variable Value is:${fullName}</p>`);
+            }
+            studDetails("HTML","CSS")
+        </script>
+        
+        <h1>With Parameter and With Return Value..</h1>
+        <script>
+            function studDetails1(firstName,lastName){
+                let fn,ln,fullName;
+
+                fn=firstName;
+                ln=lastName;
+
+                fullName=fn+ln;
+                
+                //document.write(fullName);
+                return fullName;
+            }
+
+            //studDetails1("HTML-5","CSS-3");
+            document.write(studDetails1("HTML-5","CSS-3"));
+        </script>
+
+        <h1>ECMASCRIPT CODE</h1>
+        <script>
+            document.write(`<h1>Function Defining</h1>`);
+            function sum(a,b){
+                return a+b;
+            }
+            document.write(`<h3>sum=${sum(33,22)}</h3>`);
+
+            document.write(`<h1>Function Expression..</h1>`);
+            let fullName=function(firstName,lastName){
+                return firstName+" "+lastName;
+            };
+            document.write(`<h3>fullName=${fullName("HTML","CSS")}</h3>`);
+
+            document.write(`<h1>Arrow Function..</h1>`);
+            let JS=()=>{
+                document.write("This is Arrow Function");
+            }
+            JS();  
+            
+            let rem=(a,b)=>{
+                return a%b;
+            };
+            document.write(`<h3>rem=>${rem(33,4)}</h3>`);
+        </script>
+
+        <hr>
+
+        <h1>Call Back Function...</h1>
+        <script>
+            function howAreYou(question,yes,no){
+                if(confirm(question)){
+                    yes();
+                }else{
+                    no();
+                }
+            }
+            howAreYou("How is Your Health?",function(){document.write("Good");},function(){document.write("Bad");});
+        </script>
+    </body>
+</html>

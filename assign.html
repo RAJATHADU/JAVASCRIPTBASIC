@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+            padding:0;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .form{
+            width:330px;
+            border-radius: 20px;
+            padding:20px 10px;
+            box-shadow: 0px opx 10px #636060;
+            background-color: rgb(251,251,251);
+            padding-top: 40px;
+        }
+        input,select{
+            width:100%;
+            outline: none;
+            border:none;
+            padding:10px;
+            font-size: 1em;
+            border:1px solid #330380;
+            border-radius: 5px;
+            position:relative;
+        }
+        input::placeholder{
+            color:rgb(170, 100, 102);
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form action="">
+            <p><u>Contact Form</u></p>
+            <p><label for="">Full Name</label></p>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" onkeypress="nameValidation()">
+            <p id="name-error"></p>
+            <p><label for="">Email-id</label></p>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email-id">
+            <p><label for="">Mobile Number</label></p>
+            <input type="text" name="number" id="number" placeholder="Enter  Your Mobile Number">
+            <p><label for="">City</label></p>
+            <select name="city" id="city">
+            <option value="Choose City Name">Choose City Name</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Kolkatta">Kolkatta</option>
+            <option value="Pondicherry">Pondicherry</option>
+            </select>
+            <br>
+            <div class="radio">
+                <h3>Gender</h3>
+            <input type="radio" name="gender" id="gender" value="male">
+            <label for="">Male</label>
+            <input type="radio" name="gender" id="gender" value="female">
+            <label for="">Female</label>
+            </div>
+            <div class="language">
+                <h3><label for="">Languages(optional)</label></h3>
+                <input type="checkbox" name="language" id="language">
+                <label for="">Kannada</label>
+                <input type="checkbox" name="language" id="language">
+                <label for="">English</label>
+                <input type="checkbox" name="language" id="language">
+                <label for="">Hindi</label>
+                <input type="checkbox" name="language" id="language">
+                <label for="">Tamil</label>
+                <input type="checkbox" name="language" id="language">
+                <label for="">Telugu</label>
+                </div>
+                <div class="buuton">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            function nameValidation(){
+                var name=document.getElementById("name").value;
+
+            }
+        </script>
+</body>
+</html>

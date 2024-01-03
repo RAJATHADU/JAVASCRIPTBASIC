@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_BASICS</title>
+    <style>
+        table,th,td{
+            background-color: lightgrey;
+            border: 2px solid grey;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Conditional Statements..</h1>
+    </center>
+
+    <hr>
+
+    <ol>
+        <li>Simple IF</li>
+        <li>IF Else</li>
+        <li>IF Else Ladder</li>
+        <li>Switch case</li>
+    </ol>
+    <hr>
+    <table>
+        <tr>
+            <th><label for="">Enter first number</label></th>
+            <td><input type="number" name="firstNumber" id="firstNumber" placeholder="firstNumber"></td>
+        </tr>
+        <tr>
+            <th><label for="">Enter second number</label></th>
+            <td><input type="number" name="secondNumber" id="secondNumber" placeholder="secondNumber"></td>
+        </tr>
+        <tr>
+            <th><label for="">Enter third number</label></th>
+            <td><input type="number" name="thirdNumber" id="thirdNumber" placeholder="thirdNumber"></td>
+        </tr>
+        <tr>
+            <th><label for="">Result:</label></th>
+            <td><p id="result"></p></td>
+        </tr>
+        <td><button type="button" id="btn-cnd">Submit</button></td>
+        <td><button type="button" id="btn-cnl">Cancel</button></td>     
+    </table>
+    <script>
+        function testCondition(){
+            let firstNumber = parseInt(document.getElementById(`firstNumber`).value);
+             let secondNumber = +document.getElementById(`secondNumber`).value;
+             let thirdNumber = +document.getElementById(`thirdNumber`).value;
+             console.log(typeof thirdNumber)
+            if(firstNumber === secondNumber && secondNumber === thirdNumber){
+                document.getElementById("result").innerHTML="numbers are equal"
+            } else if(firstNumber > secondNumber && firstNumber > thirdNumber){
+                document.getElementById("result").innerHTML="First number is big"
+            }else if(secondNumber >  firstNumber && secondNumber > thirdNumber){
+                document.getElementById("result").innerHTML="second number is big"
+            }else if(thirdNumber > firstNumber && thirdNumber > secondNumber){
+                document.getElementById("result").innerHTML="third number is big"
+            }else{
+                document.getElementById("result").innerHTML="your entered a wrong number"
+            }
+        }
+        document.getElementById("btn-cnd").onclick=testCondition;
+        //typeof() or typeof space variable //both are same
+        //parseInt and + operator both are same 
+    </script>
+
+    <!-- <script>
+        function testCondition(){
+            let firstNumber=10,secondNumber=20; //== is used to check the value;=== checks value and datatype
+           /* if(firstNumber==secondNumber){
+                alert("condition is true");
+            }else{
+                alert("condition is false");
+            }*/
+
+            let message= firstNumber>secondNumber  ? "Condition is true":  "condition is false"; //?: is special operator(ternary operator)
+            document.write(message);
+        }
+        testCondition(); -->
+    </script>
+</body>
+</html>
